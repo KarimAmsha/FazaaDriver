@@ -256,6 +256,7 @@
 		5267FAC92DCD42650063AF67 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267FAC82DCD42640063AF67 /* ChatListViewModel.swift */; };
 		5267FACB2DCD42F20063AF67 /* FirebaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267FACA2DCD42F10063AF67 /* FirebaseUserService.swift */; };
 		5267FACD2DCD44850063AF67 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267FACC2DCD44840063AF67 /* PushNotificationService.swift */; };
+		527797D12E85831B009A715F /* OrdersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527797D02E85831B009A715F /* OrdersListView.swift */; };
 		52A414DD2E0437E3003AD14F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A414DC2E0437E3003AD14F /* GoogleService-Info.plist */; };
 		52AEC8D72DCBE61C00B4FC84 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AEC8D62DCBE61A00B4FC84 /* ServiceModel.swift */; };
 		52AEC8DD2DCBF26900B4FC84 /* DeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AEC8DC2DCBF26100B4FC84 /* DeliveryView.swift */; };
@@ -511,6 +512,7 @@
 		5267FAC82DCD42640063AF67 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		5267FACA2DCD42F10063AF67 /* FirebaseUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserService.swift; sourceTree = "<group>"; };
 		5267FACC2DCD44840063AF67 /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
+		527797D02E85831B009A715F /* OrdersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListView.swift; sourceTree = "<group>"; };
 		52A414DC2E0437E3003AD14F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52AEC8D62DCBE61A00B4FC84 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		52AEC8DC2DCBF26100B4FC84 /* DeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryView.swift; sourceTree = "<group>"; };
@@ -847,6 +849,7 @@
 				1ECC94BB2BDC5E47002BFE54 /* RoundedCorner.swift */,
 				1ECC94C62BDC5E49002BFE54 /* WithPopover.swift */,
 				1ED8DE362C22EFD000613489 /* CustomeEmptyView.swift */,
+				527797D02E85831B009A715F /* OrdersListView.swift */,
 			);
 			path = "Modifiers+Styles+UIViewControllerRepresentable";
 			sourceTree = "<group>";
@@ -1437,6 +1440,7 @@
 				1ECC94FA2BDD130F002BFE54 /* InitialViewModel.swift in Sources */,
 				5267FABA2DCD3E990063AF67 /* FirebaseChat.swift in Sources */,
 				5235B1A72DCCE641009F75FA /* ServiceDetailsView.swift in Sources */,
+				527797D12E85831B009A715F /* OrdersListView.swift in Sources */,
 				5267FAC72DCD413C0063AF67 /* ChatViewModel.swift in Sources */,
 				1EA7FEF32C1A201600823465 /* AddFriend.swift in Sources */,
 				1ECC94D02BDC5E49002BFE54 /* OtpModifer.swift in Sources */,

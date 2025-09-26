@@ -20,9 +20,9 @@ struct OrderDetailsView: View {
                         // عنوان الشاشة
                         VStack(alignment: .center, spacing: 6) {
                             Text("تفاصيل الطلب")
-                                .font(.system(size: 24, weight: .bold))
+                                .customFont(weight: .bold, size: 24)
                             Text("استعرض تفاصيل طلبك وحالته")
-                                .font(.system(size: 15))
+                                .customFont(weight: .regular, size: 15)
                                 .foregroundColor(.gray)
                         }
                         .frame(maxWidth: .infinity)
@@ -78,8 +78,7 @@ struct OrderDetailsView: View {
                         Image(systemName: "chevron.backward")
                     }
                     Text("تفاصيل الطلب")
-                        .font(.title2)
-                        .fontWeight(.bold)
+                        .customFont(weight: .bold, size: 22)
                         .foregroundColor(.primary)
                 }
             }
@@ -137,16 +136,17 @@ struct OrderDetailsHeaderSection: View {
             HStack {
                 VStack(alignment: .leading, spacing: 6) {
                     Text(order.title ?? "خدمة")
-                        .font(.title3)
-                        .fontWeight(.bold)
+                        .customFont(weight: .bold, size: 18)
                         .foregroundColor(.blue)
                     if let date = order.dtDate {
                         Text(date)
-                            .font(.footnote)
+                            .customFont(weight: .regular, size: 13)
                             .foregroundColor(.gray)
                     }
                     if let id = order.id {
-                        Text("ID: #\(id)").font(.caption).foregroundColor(.gray)
+                        Text("ID: #\(id)")
+                            .customFont(weight: .regular, size: 12)
+                            .foregroundColor(.gray)
                     }
                 }
                 Spacer()
@@ -169,8 +169,7 @@ struct StatusLabelView: View {
     let status: OrderStatus
     var body: some View {
         Text(status.displayTitle)
-            .font(.body)
-            .fontWeight(.bold)
+            .customFont(weight: .semiBold, size: 15)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 10)
             .background(status.color.opacity(0.14))
@@ -203,12 +202,11 @@ struct OrderInfoSection: View {
                 Image(systemName: icon)
                     .frame(width: 16, height: 16)
                 Text(title)
-                    .font(.caption)
+                    .customFont(weight: .regular, size: 12)
                     .foregroundColor(.gray)
             }
             Text(value)
-                .font(.subheadline)
-                .fontWeight(.semibold)
+                .customFont(weight: .semiBold, size: 15)
         }
         .frame(maxWidth: .infinity)
     }
@@ -219,15 +217,15 @@ struct ServicesListSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("الخدمات المختارة")
-                .font(.headline)
+                .customFont(weight: .semiBold, size: 17)
             ForEach(Array(extra.enumerated()), id: \.offset) { idx, item in
                 VStack(alignment: .leading) {
                     HStack {
                         Text("خدمة فرعية ID: \(item.subSubCategoryId ?? "-")")
-                            .fontWeight(.semibold)
+                            .customFont(weight: .semiBold, size: 14)
                         Spacer()
                         Text("الكمية: \(item.qty ?? 1)")
-                            .font(.subheadline)
+                            .customFont(weight: .regular, size: 13)
                             .foregroundColor(.black)
                     }
                     Divider()
@@ -259,9 +257,9 @@ struct OrderLocationSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("مكان تنفيذ الخدمة")
-                .font(.headline)
+                .customFont(weight: .semiBold, size: 17)
             Text(address)
-                .font(.subheadline)
+                .customFont(weight: .regular, size: 15)
                 .foregroundColor(.gray)
             Map(coordinateRegion: $region, annotationItems: [OrderMapPin(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng))]) { pin in
                 MapMarker(coordinate: pin.coordinate, tint: .red)
@@ -305,7 +303,7 @@ struct OrderActionsSection: View {
     func actionButton(title: String, background: Color, foreground: Color, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Text(title)
-                .fontWeight(.bold)
+                .customFont(weight: .bold, size: 15)
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(background)
@@ -320,9 +318,9 @@ struct OrderActionsSection: View {
                 Image(systemName: "bubble.left.and.bubble.right.fill")
                     .foregroundColor(.blue)
                 Text("محادثة مع المزود")
+                    .customFont(weight: .bold, size: 15)
                     .foregroundColor(.blue)
             }
-            .fontWeight(.bold)
             .frame(maxWidth: .infinity)
             .padding()
             .background(Color.blue.opacity(0.10))
@@ -342,17 +340,19 @@ struct CancelOrderSheet: View {
         NavigationView {
             VStack(spacing: 20) {
                 Text("سبب الإلغاء")
-                    .font(.headline)
+                    .customFont(weight: .semiBold, size: 17)
                 TextField("اكتب سبب الإلغاء هنا...", text: $note)
                     .textFieldStyle(.roundedBorder)
                 HStack {
                     Button("إلغاء", action: onCancel)
+                        .customFont(weight: .semiBold, size: 15)
                         .foregroundColor(.gray)
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(Color(.systemGray5))
                         .cornerRadius(8)
                     Button("تأكيد الإلغاء", action: onConfirm)
+                        .customFont(weight: .semiBold, size: 15)
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -377,7 +377,7 @@ struct RateOrderSheet: View {
         NavigationView {
             VStack(spacing: 20) {
                 Text("قيّم الطلب")
-                    .font(.headline)
+                    .customFont(weight: .semiBold, size: 17)
                 HStack(spacing: 8) {
                     ForEach(1...5, id: \.self) { star in
                         Image(systemName: star <= rating ? "star.fill" : "star")
@@ -390,6 +390,7 @@ struct RateOrderSheet: View {
                     .textFieldStyle(.roundedBorder)
                 HStack {
                     Button("إلغاء", action: onCancel)
+                        .customFont(weight: .semiBold, size: 15)
                         .foregroundColor(.gray)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -398,6 +399,7 @@ struct RateOrderSheet: View {
                     Button("إرسال التقييم") {
                         onRate(rating, comment)
                     }
+                    .customFont(weight: .semiBold, size: 15)
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
                     .padding()

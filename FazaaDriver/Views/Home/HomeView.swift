@@ -26,10 +26,10 @@ struct StatBox: View {
             }
             .frame(height: 52)
             Text(title)
-                .font(.system(size: 15, weight: .semibold))
+                .customFont(weight: .semiBold, size: 15)
                 .foregroundColor(.black)
             Text("\(count)")
-                .font(.system(size: 19, weight: .bold))
+                .customFont(weight: .bold, size: 19)
                 .foregroundColor(Color(hex: "#113E72"))
         }
         .frame(height: 110)
@@ -95,7 +95,7 @@ struct HomeView: View {
                     }
 
                     Text(LocalizedStringKey.statistics)
-                        .font(.system(size: 20, weight: .bold))
+                        .customFont(weight: .bold, size: 20)
                         .foregroundColor(.black)
                 }
             }
