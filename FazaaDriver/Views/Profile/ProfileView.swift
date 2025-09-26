@@ -44,25 +44,25 @@ struct ProfileView: View {
                     .padding(.horizontal)
 
                     // Pre-define all rows
-                    let editProfileRow = settingsRow(title: "تعديل الملف الشخصي", icon: "person.crop.circle") {
-                        appRouter.navigate(to: .editProfile)
-                    }
+//                    let editProfileRow = settingsRow(title: "تعديل الملف الشخصي", icon: "person.crop.circle") {
+//                        appRouter.navigate(to: .editProfile)
+//                    }
 
-                    let walletRow = settingsRow(title: "المحفظة", icon: "creditcard") {
-                        appRouter.navigate(to: .walletView)
-                    }
-
-                    let rewardsRow = settingsRow(title: "نقاطي", icon: "star") {
-                        appRouter.navigate(to: .rewards)
-                    }
+//                    let walletRow = settingsRow(title: "المحفظة", icon: "creditcard") {
+//                        appRouter.navigate(to: .walletView)
+//                    }
+//
+//                    let rewardsRow = settingsRow(title: "نقاطي", icon: "star") {
+//                        appRouter.navigate(to: .rewards)
+//                    }
 
                     let contactRow = settingsRow(title: "تواصل معنا", icon: "message") {
                         appRouter.navigate(to: .contactUs)
                     }
 
-                    let addressRow = settingsRow(title: "عناويني", icon: "mappin.and.ellipse") {
-                        appRouter.navigate(to: .addressBook)
-                    }
+//                    let addressRow = settingsRow(title: "عناويني", icon: "mappin.and.ellipse") {
+//                        appRouter.navigate(to: .addressBook)
+//                    }
 
                     let usagePolicyRow = settingsRow(title: "سياسة الاستخدام", icon: "heart") {
                         if let item = initialViewModel.constantsItems?.first(where: { $0.constantType == .using }) {
@@ -90,11 +90,11 @@ struct ProfileView: View {
 
                     // Settings List
                     VStack(spacing: 0) {
-                        editProfileRow
-                        walletRow
-                        rewardsRow
+//                        editProfileRow
+//                        walletRow
+//                        rewardsRow
                         contactRow
-                        addressRow
+//                        addressRow
                         usagePolicyRow
                         privacyPolicyRow
                         shareAppRow
